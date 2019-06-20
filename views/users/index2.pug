@@ -1,0 +1,18 @@
+extends ../layout/master_layout.pug
+block content
+	a.btn.btn-outline-primary(href="/users/create") them user
+	a.btn.btn-outline-dark.ml-2(href="/users/vudeptrai") link
+	table.table
+		tr
+			th Name
+			th Phone
+			th Action
+			each user in users
+				
+				tr
+					td=user.name
+					td=user.phone
+					td
+						a.btn.btn-warning(href='/users/' + user.id) view
+
+
