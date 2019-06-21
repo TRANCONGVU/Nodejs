@@ -1,7 +1,10 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-
+var cookieParser = require('cookie-parser');
 var userRoute = require('./routes/user.route');
+var authRoute = require('./routes/auth.route');
+
+var middleWare = require('./middleware/auth-middleware');
 
  var db = require('./db');
 
@@ -14,6 +17,8 @@ app.set('view engine' , 'pug');
 app.set('views' , './views');
 
 app.use(express.static('public'));//duong dan den public
+app.use(cookieParser());
+
 
 app.get('/',function(request,response){
 	response.render('index',{
@@ -22,7 +27,8 @@ app.get('/',function(request,response){
 });
 
 
-app.use('/users',userRoute);
+app.use('/users',middleWare.requireAuth ,userRoute);
+app.use('/auth',authRoute);
 
 app.listen(port,function(){
 	console.log('Server isss runing vu dep trai' + port);

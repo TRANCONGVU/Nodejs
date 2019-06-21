@@ -3,17 +3,19 @@
     {
       "name": "Trần Công Vũ",
       "phone": "0974590197",
-      "id": "DW49zPb4C"
+      "id": "DW49zPb4C",
+      "email": "vu@gmail.com",
+      "password": "123456"
     },
     {
-      "name": "Trần Công Vũ",
-      "phone": "121",
-      "id": "9SayAY4gc"
+      "name": "linh chi",
+      "phone": "1234",
+      "id": "xy-IGONQ4"
     },
     {
-      "name": "Trần Công Vũ",
-      "phone": "121",
-      "id": "TnR0_ph5p"
+      "name": "nnn",
+      "phone": "llll",
+      "id": "djBRmLyes"
     }
   ],
   "user": []
