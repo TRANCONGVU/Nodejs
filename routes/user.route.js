@@ -8,7 +8,7 @@ var middleWare = require('../middleware/auth-middleware');
 var router = express.Router();
 
 
-router.get('/',middleWare.requireAuth ,controller.index);
+router.get('/' ,controller.index);
 
 router.get('/cookie',function(req,res,next){
     res.cookie('user-id',12345);
@@ -17,7 +17,6 @@ router.get('/cookie',function(req,res,next){
 
 
 router.get('/search',controller.search);
-
 
 router.get('/create',controller.create);
 

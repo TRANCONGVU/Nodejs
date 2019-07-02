@@ -1,0 +1,30 @@
+extends ../layout/master_layout.pug
+block content
+    form(action="/product/searchProduct", method="GET" ,class="form-inline my-2 my-lg-0")
+        input(type="text" name="q" class="form-control mr-sm-2" ,placeholder="Search", aria-label="Search")
+        button(class="btn btn-outline-success my-2 my-sm-0" ,type="submit") Search
+    h3.text-uppercase product
+    .row.d-flex
+        each product in products
+        
+            .col-md-3.d-flex.flex-column.product.py-4
+                img(src=product.images, alt="" ,style="height : 300px ; object-fit : cover")
+                a.text-danger(href="#",style = "height : 70px; font-size : 20px")=product.name
+                span(style = "height : 100px;overflow: hidden;")=product.description
+                h4.text-danger=product.price
+                button.btn-primary Add to card
+
+    nav( aria-label="Page navigation example")
+        ul( class="pagination")
+            li(class="page-item")
+                a(class="page-link", href="#" ,aria-label="Previous")
+                    span(aria-hidden="true") &laquo;
+            li(class="page-item")
+                a(class="page-link", href="?page=1") 1
+            li(class="page-item")
+                a(class="page-link", href="?page=2") 2
+            li(class="page-item")
+                a(class="page-link", href="?page=3") 3
+            li(class="page-item")
+                a( class="page-link" , href="#" , aria-label="Next")
+                    span(aria-hidden="true") &raquo;   
